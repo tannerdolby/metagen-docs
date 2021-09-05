@@ -239,22 +239,22 @@ The locale these tags are marked up in. Type: String, default: 'en_US'
 Display default comments for the Open Graph and Twitter tags. Type: Boolean, default: false
 
 ### og_title
-The content for `og:title`. Type: String, default: title
+The content for `og:title`. Type: String, default: `title`
 
 ### twitter_title
-The content for `twitter:title`. Type: String, default: title
+The content for `twitter:title`. Type: String, default: `title`
 
 ### og_desc
-The content for `og:description`. Type: String default: desc
+The content for `og:description`. Type: String default: `desc`
 
 ### twitter_desc
-The content for `twitter:description`. Type: String, default: desc
+The content for `twitter:description`. Type: String, default: `desc`
 
 ### og_comment
-Display a custom comment for the Open Graph set of tags. Type: String, requires: comments=true
+Display a custom comment for the Open Graph set of tags. Type: String, requires: `comments=true`
 
 ### twitter_comment
-Display a custom comment for the Twitter set of tags. Type: String, requires: comments=true
+Display a custom comment for the Twitter set of tags. Type: String, requires: `comments=true`
 
 ### attr_name
-Define the attribute name for the set of Twitter meta tags. Options are 'property' or the default 'name'. Type: String, default: name
+Define the attribute name for the set of Twitter meta tags. Options are 'property' or the default 'name'. Type: String, default: `name`

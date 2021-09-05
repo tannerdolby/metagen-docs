@@ -218,3 +218,7 @@ footer {
     text-align: center;
     margin: auto auto 1rem;
 }
+
+footer a {
+    color: #222;
+}
