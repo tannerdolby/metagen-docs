@@ -1,0 +1,37 @@
+---
+metadata:
+  title: Eleventy Plugin Metagen Docs
+  desc: Documentation site for eleventy-plugin-metagen
+  twitter_handle: tannerdolby
+  twitter_card_type: summary_large_image
+  img: https://tannerdolby.com/images/arch-spiral-large.jpg
+  img_alt: An Archimedean Spiral generated with JavaScript
+  comments: true
+---
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        {% metagen metadata %}
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        {% set css %}
+            {% include "css/style.css" %}
+            {% include "css/reset.css" %}
+            {% include "css/prism.css" %}
+        {% endset %}
+        <style>
+           {{ css | cssmin | safe }}
+        </style>
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        {% include "layouts/nav.njk" %}
+
+        <main id="main">
+        {{ content | safe }}
+        </main>
+
+        {% include "layouts/footer.njk" %}
+    </body>
+</html>
