@@ -1,8 +1,9 @@
 ---
 title: Eleventy Plugin Metagen
-date: 2020-09-05
+date: 2021-09-06
 npm_link: https://www.npmjs.com/package/eleventy-plugin-metagen
 layout: base.njk
+templateEngineOverride: njk, md
 ---
 
 # {{ title }}
@@ -80,9 +81,9 @@ into `<meta>` tags and other document metadata like this:
 ## Custom Usage
 For a baseline social share functionality, providing all of the comma separated arguments to `metagen` shown in the example usage above is recommended. If you want to add more tags not listen in the example, see You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't generate `<meta>` tags.
 
-Besides the default generated `<meta>` tags, only the arguments you provide data for will be generated as `<meta>` tags. This allows you to include some of your own tags alongside `metagen` if you need. Template variables can be used in the Nunjucks and Liquid shortcode arguments without the curly braces or quotes like `title=page.url` (Nunjucks) or `title` (Liquid). More on template variable usage [below](https://github.com/tannerdolby/eleventy-plugin-metagen#use-your-template-data).
+Besides the default generated `<meta>` tags, only the arguments you provide data for will be generated as `<meta>` tags. This allows you to include some of your own tags alongside `metagen` if you need. Template variables can be used in the Nunjucks and Liquid shortcode arguments without the curly braces or quotes like `title=page.url` (Nunjucks) or `title` (Liquid). More on template variable usage [below](#use_your_template_data)
 
-## Shortcode Default
+## Shortcode Default Tags
 
 If atleast one parameter is provided to `metagen`:
 
@@ -202,7 +203,7 @@ The content for `twitter:card`. Type: String, default: 'summary'
 ### name
 The content for `<meta name="author">`. Type: String
 
-### title
+### `title`
 The content for `<title>`, `twitter:title` and `og:title`. If `og_title` and `twitter_title` are defined they will override the fields. Type: String
 
 ### desc
@@ -214,7 +215,7 @@ The content for `twitter:url` and `og:url`. Type String
 ### img
 The content for `twitter:image` and `og:image`. Type String
 
-### img_alt
+### `img_alt`
 The content for `twitter:image:alt` and `og:image:alt`. Type String
 
 ### img_width
@@ -253,7 +254,7 @@ The content for `twitter:description`. Type: String, default: `desc`
 ### og_comment
 Display a custom comment for the Open Graph set of tags. Type: String, requires: `comments=true`
 
-### twitter_comment
+### `twitter_comment`
 Display a custom comment for the Twitter set of tags. Type: String, requires: `comments=true`
 
 ### attr_name
