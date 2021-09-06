@@ -1,6 +1,6 @@
 ---
 title: Eleventy Plugin Metagen
-date: 2021-09-06
+date: 2021-09-05
 npm_link: https://www.npmjs.com/package/eleventy-plugin-metagen
 layout: base.njk
 templateEngineOverride: njk, md
