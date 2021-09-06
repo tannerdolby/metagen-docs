@@ -172,22 +172,22 @@ main {
 
 .header-icon {
     border: 1px solid #222;
-    padding: .5rem 1rem;
+    padding: .6rem 1rem;
     width: fit-content;
     width: -moz-fit-content;
     font-size: 1.1rem;
     color: #222;
     font-weight: 500;
-    background: #222;
+    background: #111;
     color: #fff;
     font-size: clamp(1.1rem, 3vw, 1.3rem);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .header-icon:hover {
     color: #fff;
     text-decoration: none;
-    background: #111;
+    background: #222;
 }
 
 .nav-menu {

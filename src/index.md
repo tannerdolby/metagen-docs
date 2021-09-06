@@ -1,6 +1,6 @@
 ---
 title: Eleventy Plugin Metagen
-date: 2021-09-05
+date: 2021-09-06
 npm_link: https://www.npmjs.com/package/eleventy-plugin-metagen
 layout: base.njk
 templateEngineOverride: njk, md
@@ -204,7 +204,7 @@ The content for `twitter:card`. Type: String, default: 'summary'
 The content for `<meta name="author">`. Type: String
 
 ### `title`
-The content for `<title>`, `twitter:title` and `og:title`. If `og_title` and `twitter_title` are defined they will override the fields. Type: String
+The content for `<title>`, `<meta name="title">`, `twitter:title` and `og:title`. If `og_title` and `twitter_title` are defined they will override the fields. Type: String
 
 ### desc
 The content for `twitter:description`, `og:description` and `<meta name="description">` if `og_desc` or `twitter_desc` isn't defined. Type: String
@@ -233,6 +233,9 @@ The content for `twitter:creator`. This tag is used if the `twitter_card_type` i
 ### site_name
 The content for `og:site_name`. Type: String
 
+### attr_name
+Define attribute name for the Twitter set of meta tags. Options are 'property' or the default 'name'. Type: String, default: `name`
+
 ### locale
 The locale these tags are marked up in. Type: String, default: 'en_US' 
 
@@ -256,6 +259,3 @@ Display a custom comment for the Open Graph set of tags. Type: String, requires:
 
 ### `twitter_comment`
 Display a custom comment for the Twitter set of tags. Type: String, requires: `comments=true`
-
-### attr_name
-Define the attribute name for the set of Twitter meta tags. Options are 'property' or the default 'name'. Type: String, default: `name`

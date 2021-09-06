@@ -1,19 +1,23 @@
 {
   "name": "eleventy-metagen-docs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Documentation site for the meta generator Eleventy plugin metagen.",
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve"
   },
-  "keywords": [],
+  "keywords": [
+    "11ty",
+    "metadata",
+    "metatags"
+  ],
   "author": "Tanner Dolby",
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "clean-css": "^5.1.5",
-    "eleventy-plugin-metagen": "^1.4.3",
+    "eleventy-plugin-metagen": "^1.4.5",
     "terser": "^5.7.2"
   },
   "devDependencies": {
