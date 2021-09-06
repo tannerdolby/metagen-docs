@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+{% include "layouts/nav.njk" %}
+
+<main id="main">
+    {{ content | safe }}
+</main>
+
+{% include "layouts/footer.njk" %}

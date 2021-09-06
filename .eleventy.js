@@ -5,8 +5,9 @@ const { minify } = require("terser");
 
 module.exports = (eleventyConfig) => {
 
-    eleventyConfig.addPassthroughCopy("./src/_includes/css");
-    eleventyConfig.addPassthroughCopy("./src/_includes/js");
+    eleventyConfig.addPassthroughCopy("./src/css");
+    eleventyConfig.addPassthroughCopy("./src/js");
+    eleventyConfig.addPassthroughCopy("./src/favicons");
 
     eleventyConfig.addPlugin(metagen);
     eleventyConfig.addPlugin(CleanCSS);
