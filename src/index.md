@@ -257,5 +257,5 @@ The content for `twitter:description`. Type: String, default: `desc`
 ### og_comment
 Display a custom comment for the Open Graph set of tags. Type: String, requires: `comments=true`
 
-### `twitter_comment`
+### twitter_comment
 Display a custom comment for the Twitter set of tags. Type: String, requires: `comments=true`
