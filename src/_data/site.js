@@ -2,7 +2,7 @@ module.exports = () => {
     return {
         first_name: "Tanner",
         last_name: "Dolby",
-        email: "tannercdolby@gmail.com",
+        site_name: "Metagen Docs",
         version: "1.4.3"
     }
 }
