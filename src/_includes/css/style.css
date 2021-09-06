@@ -147,12 +147,17 @@ main {
     margin: 0 .8rem;
 }
 
+
 .main-menu ul li:first-child {
     margin-left: 0;
 }
 
 .main-menu ul li:last-child {
     margin-left: auto;
+}
+
+.main-menu ul li p {
+    margin-bottom: 0;
 }
 
 .main-menu ul li a {
