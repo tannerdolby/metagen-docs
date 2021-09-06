@@ -1,3 +1,7 @@
 <footer>
     <p>&copy; {% getYear %} {{ site.first_name }} {{ site.last_name }}. Built with <a href="https://11ty.dev">Eleventy</a></p>
+    <div class="row">
+        <a href="https://github.com/tannerdolby/metagen-docs/blob/master/{{ page.inputPath }}">Edit this page</a>
+        <p>- Last updated: {{ date | date }}</p>
+    </div>
 </footer>
