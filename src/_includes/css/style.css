@@ -218,21 +218,21 @@ table th, table tr td {
     border: 1px solid #ccc;
 }
 
-h2 > a,
-h3 > a,
-h4 > a {
+body h2 > a,
+body h3 > a,
+body h4 > a {
     color: #222;
 }
 
-h2 > a {
+body h2 > a {
     font-size: 1.5rem;
 }
 
-h3 > a {
+body h3 > a {
     font-size: 1.3rem;
 }
 
-h4 > a {
+body h4 > a {
     font-size: 1.175rem;
 }
 
