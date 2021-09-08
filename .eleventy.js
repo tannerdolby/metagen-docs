@@ -44,6 +44,11 @@ module.exports = (eleventyConfig) => {
         return `${date}`;
     });
 
+    eleventyConfig.addShortcode('updatedAt', function() {
+      const date = new Date().toDateString();
+      return `${date}`;
+    });
+
     markdownTemplateEngine: "njk";
 
     return {

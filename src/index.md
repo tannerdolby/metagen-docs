@@ -33,6 +33,7 @@ module.exports = (eleventyConfig) => {
 The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like this:
 
 {% raw %}
+
 ```liquid
 {% metagen
     title="Eleventy Plugin Meta Generator",
@@ -79,7 +80,7 @@ into `<meta>` tags and other document metadata like this:
 {% endraw %}
 
 ## Custom Usage
-For a baseline social share functionality, providing all of the comma separated arguments to `metagen` shown in the example usage above is recommended. If you want to add more meta tags that are not listed in the example, see [parameters](https://metagendocs.netlify.app/#shortcode_parameters) for supported tags. You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't generate `<meta>` tags.
+For a baseline social share functionality, providing all of the comma separated arguments to `metagen` shown in the example usage above is recommended. If you want to add more meta tags that are not listed in the example, see [parameters](#shortcode_parameters) for supported tags. You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't generate `<meta>` tags.
 
 Besides the default generated `<meta>` tags, only the arguments you provide data for will be generated as `<meta>` tags. This allows you to include some of your own tags alongside `metagen` if you need. Template variables can be used in the Nunjucks and Liquid shortcode arguments without the curly braces or quotes like `title=page.url` (Nunjucks) or `title` (Liquid). More on template variable usage [below](#use_your_template_data)
 
@@ -196,6 +197,7 @@ data:
 The Liquid usage is a bit different as the shortcode expects a single parameter representing an object with key/value pairs. You can define the object in frontmatter like shown above or within global data files.
 
 ## Shortcode Parameters
+A list containing all of the parameters this plugin accepts. If you can't find a parameter that suits your all of your needs, feel free to [open an issue](https://github.com/tannerdolby/eleventy-plugin-metagen/issues) so we can get the parameter and/or corresponding meta tag added to the plugin.
 
 ### twitter_card_type
 The content for `twitter:card`. Type: String, default: 'summary'
@@ -203,7 +205,7 @@ The content for `twitter:card`. Type: String, default: 'summary'
 ### name
 The content for `<meta name="author">`. Type: String
 
-### `title`
+### title
 The content for `<title>`, `<meta name="title">`, `twitter:title` and `og:title`. If `og_title` and `twitter_title` are defined they will override the fields. Type: String
 
 ### desc
@@ -215,7 +217,7 @@ The content for `twitter:url` and `og:url`. Type String
 ### img
 The content for `twitter:image` and `og:image`. Type String
 
-### `img_alt`
+### img_alt
 The content for `twitter:image:alt` and `og:image:alt`. Type String
 
 ### img_width
