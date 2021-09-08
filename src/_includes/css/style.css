@@ -69,7 +69,7 @@ body p {
     margin-bottom: 24px;
 }
 
-a {
+a, details {
     font-size: 1.15rem;
 }
 
@@ -96,6 +96,29 @@ code {
 pre code {
     margin: 0;
     padding: 0;
+}
+
+.toc {
+    list-style: disc;
+}
+
+.toc li {
+    margin: 8px 0;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+.toc li:hover {
+    background: rgb(240, 240, 240);
+}
+
+.toc li a {
+    display: block;
+}
+
+.toc li a:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 body h1,

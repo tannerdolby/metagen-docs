@@ -10,6 +10,20 @@ templateEngineOverride: njk, md
 
 eleventy-plugin-metagen is a `<meta>` tag generator for sites built with [Eleventy](https://11ty.dev). Generate meta tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with some other useful tags. All of the tags necessary for a baseline social share functionality are included with this plugin along with some additional tags for more custom use cases.
 
+<details>
+  <summary>Table of Contents</summary>
+  <ul class="toc">
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#what_does_it_do?">What does it do?</a></li>
+    <li><a href="#custom_usage">Custom usage</a></li>
+    <li><a href="#shortcode_default_tags">Shortcode Default Tags</a></li>
+    <li><a href="#shorthand_nunjucks_usage">Shorthand Nunjucks Usage</a></li>
+    <li><a href="#use_your_template_data">Use Your Template Data</a></li>
+    <li><a href="#liquid_usage">Liquid usage</a></li>
+    <li><a href="#shortcode_parameters">Shortcode Parameters</a></li>
+  </ul>
+</details>
+
 ## Installation
 In your Eleventy project, [install the plugin](https://www.npmjs.com/package/eleventy-plugin-metagen) from npm:
 
