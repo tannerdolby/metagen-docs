@@ -195,7 +195,7 @@ main {
     border-bottom: 1px solid lightgray;
     width: 100%;
     text-align: center;
-    margin: 1rem auto 0;
+    margin: 1.75rem auto 0;
 }
 
 .nav-menu ul li a {
@@ -218,52 +218,22 @@ table th, table tr td {
     border: 1px solid #ccc;
 }
 
-h2, h2 > a {
-    font-size: 1.5rem;
-    color: #444;
+h2 > a,
+h3 > a,
+h4 > a {
+    color: #222;
 }
 
-h3 {
-    font-size: 1.28rem;
+h2 > a {
+    font-size: 1.5rem;
 }
 
 h3 > a {
-    font-size: 1.35rem;
-    color: #444;
+    font-size: 1.3rem;
 }
 
-h4, h4 > a {
+h4 > a {
     font-size: 1.175rem;
-}
-
-.direct-link {
-    vertical-align: top;
-    margin-left: 7px;
-    padding: 0 1px;
-    color: transparent;
-}
-
-.direct-link:focus {
-    color: #222;
-}
-
-h2:hover .direct-link,
-h3:hover .direct-link,
-h4:hover .direct-link,
-h2:focus .direct-link,
-h3:focus .direct-link,
-h4:focus .direct-link {
-   color: #444;
-}
-
-h2:hover .direct-link:hover,
-h3:hover .direct-link:hover,
-h4:hover .direct-link:hover,
-h2:focus .direct-link:hover,
-h3:focus .direct-link:hover,
-h4:focus .direct-link:hover {
-    color: #222;
-    text-decoration: none;
 }
 
 .row {

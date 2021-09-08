@@ -13,9 +13,9 @@ function linkify(headings) {
         headings.forEach(h => {
             h.setAttribute("id", `${getId(h.textContent)}`)
             const a = document.createElement("a");
-            a.setAttribute("class", "direct-link");
             a.setAttribute("href", `#${getId(h.textContent)}`);
-            a.textContent = "#";
+            a.textContent = h.textContent;
+            h.textContent = "";
             h.appendChild(a);
         });
     }
