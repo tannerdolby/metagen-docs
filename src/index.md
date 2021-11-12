@@ -74,6 +74,7 @@ into `<meta>` tags and other document metadata like this:
 <title>Eleventy Plugin Meta Generator</title>
 <meta name="author" content="Tanner Dolby">
 <meta name="description" content="An eleventy shortcode for generating meta tags.">
+<meta name="generator" content="eleventy">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
