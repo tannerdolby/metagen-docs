@@ -10,19 +10,21 @@ templateEngineOverride: njk, md
 
 eleventy-plugin-metagen is a `<meta>` tag generator for sites built with [Eleventy](https://11ty.dev). Generate meta tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with some other useful tags. All of the tags necessary for a baseline social share functionality are included with this plugin along with some additional tags for more custom use cases.
 
-<details>
-  <summary>Table of Contents</summary>
-  <ul class="toc">
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#what_does_it_do?">What does it do?</a></li>
-    <li><a href="#custom_usage">Custom usage</a></li>
-    <li><a href="#shortcode_default_tags">Shortcode Default Tags</a></li>
-    <li><a href="#shorthand_nunjucks_usage">Shorthand Nunjucks Usage</a></li>
-    <li><a href="#use_your_template_data">Use Your Template Data</a></li>
-    <li><a href="#liquid_usage">Liquid usage</a></li>
-    <li><a href="#shortcode_parameters">Shortcode Parameters</a></li>
-  </ul>
-</details>
+<nav>
+  <details>
+    <summary>Table of Contents</summary>
+      <ul class="toc">
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#what_does_it_do?">What does it do?</a></li>
+        <li><a href="#custom_usage">Custom usage</a></li>
+        <li><a href="#shortcode_default_tags">Shortcode Default Tags</a></li>
+        <li><a href="#shorthand_nunjucks_usage">Shorthand Nunjucks Usage</a></li>
+        <li><a href="#use_your_template_data">Use Your Template Data</a></li>
+        <li><a href="#liquid_usage">Liquid usage</a></li>
+        <li><a href="#shortcode_parameters">Shortcode Parameters</a></li>
+      </ul>
+  </details>
+</nav>
 
 ## Installation
 In your Eleventy project, [install the plugin](https://www.npmjs.com/package/eleventy-plugin-metagen) from npm:
@@ -214,64 +216,70 @@ The Liquid usage is a bit different as the shortcode expects a single parameter 
 A list containing all of the parameters this plugin accepts. If you can't find a parameter that suits your all of your needs, feel free to [open an issue](https://github.com/tannerdolby/eleventy-plugin-metagen/issues) so we can get the parameter and/or corresponding meta tag added to the plugin.
 
 ### twitter_card_type
-The content for `twitter:card`. Type: String, default: 'summary'
+The content for `twitter:card`. default: 'summary'
 
 ### name
-The content for `<meta name="author">`. Type: String
+The content for `<meta name="author">`.
 
 ### title
-The content for `<title>`, `<meta name="title">`, `twitter:title` and `og:title`. If `og_title` and `twitter_title` are defined they will override the fields. Type: String
+The content for `<title>`, `<meta name="title">`, `twitter:title` and `og:title`. If `og_title` and `twitter_title` are defined they will override the fields.
 
 ### desc
-The content for `twitter:description`, `og:description` and `<meta name="description">` if `og_desc` or `twitter_desc` isn't defined. Type: String
+The content for `twitter:description`, `og:description` and `<meta name="description">` if `og_desc` or `twitter_desc` isn't defined.
 
 ### url
-The content for `twitter:url` and `og:url`. Type String
+The content for `twitter:url` and `og:url`.
 
 ### img
-The content for `twitter:image` and `og:image`. Type String
+The content for `twitter:image` and `og:image`.
 
 ### img_alt
-The content for `twitter:image:alt` and `og:image:alt`. Type String
+The content for `twitter:image:alt` and `og:image:alt`.
 
 ### img_width
-The content for `og:image:width`. Type: Number or String
+The content for `og:image:width`.
 
 ### img_height
-The content for `og:image:height`. Type: Number or String
+The content for `og:image:height`.
 
 ### twitter_handle
-The content for `twitter:site` or `twitter:creator` if the card type is `summary_large_image`. Type: String
+The content for `twitter:site` or `twitter:creator` if the card type is `summary_large_image`.
 
 ### creator_handle
-The content for `twitter:creator`. This tag is used if the `twitter_card_type` is `summary_large_image`. Type: String
+The content for `twitter:creator`. This tag is used if the `twitter_card_type` is `summary_large_image`.
 
 ### site_name
-The content for `og:site_name`. Type: String
+The content for `og:site_name`.
 
 ### attr_name
-Define attribute name for the Twitter set of meta tags. Options are 'property' or the default 'name'. Type: String, default: `name`
+Define attribute name for the Twitter set of meta tags. Options are 'property' or the default 'name'. default: `name`
 
 ### locale
-The locale these tags are marked up in. Type: String, default: 'en_US' 
+The locale these tags are marked up in. default: 'en_US' 
 
 ### comments
-Display default comments for the Open Graph and Twitter tags. Type: Boolean, default: false
+Display default comments for the Open Graph and Twitter tags. default: false
+
+### generator
+The content for `<meta name="generator">`. The value must be a free-form string that identifies one of the software packages used to generate the document. This value must not be used on pages whose markup is not generated by software, e.g. pages whose markup was written by a user in a text editor.
+
+### og_type
+The content for `og:type`. options: "website" (default), "proudct", "article"
 
 ### og_title
-The content for `og:title`. Type: String, default: `title`
+The content for `og:title`. default: `title`
 
 ### twitter_title
-The content for `twitter:title`. Type: String, default: `title`
+The content for `twitter:title`. default: `title`
 
 ### og_desc
-The content for `og:description`. Type: String default: `desc`
+The content for `og:description`. default: `desc`
 
 ### twitter_desc
-The content for `twitter:description`. Type: String, default: `desc`
+The content for `twitter:description`. default: `desc`
 
 ### og_comment
-Display a custom comment for the Open Graph set of tags. Type: String, requires: `comments=true`
+Display a custom comment for the Open Graph set of tags. requires: `comments=true`
 
 ### twitter_comment
-Display a custom comment for the Twitter set of tags. Type: String, requires: `comments=true`
+Display a custom comment for the Twitter set of tags. requires: `comments=true`
