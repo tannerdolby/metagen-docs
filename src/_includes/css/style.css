@@ -204,16 +204,17 @@ main {
     font-weight: 500;
     font-size: clamp(1.1rem, 3vw, 1.4rem);
     border-radius: 3px;
-    box-shadow: 2px 2px 0 0 #000;
+    /* box-shadow: 2px 2px 0 0 #000; */
     will-change: box-shadow;
     transition: 100ms all ease-in;
+    background: #111;
+    color: #fff;
 }
 
 .header-icon:hover {
     color: #fff;
     text-decoration: none;
-    background: #222;
-    box-shadow: -1px -1px 0 0 transparent;
+    background: #000;
 }
 
 .header-icon::after {
