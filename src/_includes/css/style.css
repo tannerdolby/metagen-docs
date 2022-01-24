@@ -199,16 +199,14 @@ main {
     padding: .6rem 2.6rem .6rem 1rem;
     width: fit-content;
     width: -moz-fit-content;
-    font-size: 1.1rem;
-    color: #222;
+    font-size: 1rem;
+    color: #000;
     font-weight: 500;
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-size: clamp(1rem, 3vw, 1.2rem);
     border-radius: 3px;
-    /* box-shadow: 2px 2px 0 0 #000; */
+    box-shadow: 2px 2px 0 0 #000;
     will-change: box-shadow;
     transition: 100ms all ease-in;
-    background: #111;
-    color: #fff;
 }
 
 .header-icon:hover {
