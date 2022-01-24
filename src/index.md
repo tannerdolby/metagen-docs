@@ -236,7 +236,7 @@ default: `false`
 Display a custom comment for the Open Graph set of tags.  
 requires: `comments: true`
 
-### og_type
+### type
 The content for `og:type`.  
 options: `article`, `product`  
 default: `website`
