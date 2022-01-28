@@ -242,7 +242,7 @@ options: `article`, `product`
 default: `website`
 
 ### url
-The content for `<link rel="canonical" href="foo.com">`, `og:url` and `twitter:url`.
+The content for `<link rel="canonical">`, `og:url` and `twitter:url`.
 
 ### site_name
 The content for `og:site_name`.
