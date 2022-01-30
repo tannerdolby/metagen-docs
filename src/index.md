@@ -190,7 +190,9 @@ As a general rule, don't forget your in a templating engine context. Use your va
 
 ### Liquid Usage
 
-If you would like to use Liquid (which is the default templating engine in Eleventy). Then utilize the following syntax, to turn shortcodes like this:
+If you would like to use Liquid (which is the default templating engine in Eleventy). Then utilize the following syntax by passing the shortcode an object containing the expected fields.
+
+Note: You can also pass an object from global data or frontmatter to `metagen` in Nunjucks like shown below.
 
 {% raw %}
 ```liquid
