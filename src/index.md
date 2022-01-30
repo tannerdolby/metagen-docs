@@ -190,9 +190,9 @@ As a general rule, don't forget your in a templating engine context. Use your va
 
 ### Liquid Usage
 
-If you would like to use Liquid (which is the default templating engine in Eleventy). Then utilize the following syntax by passing the shortcode an object containing the expected fields.
+If you would like to use Liquid (which is the default templating engine in Eleventy). Then utilize the following syntax by passing the shortcode a metadata object containing the expected fields.
 
-Note: You can also pass an object from global data or frontmatter to `metagen` in Nunjucks like shown below.
+Note: You can pass an object from global data or frontmatter to `metagen` using Nunjucks like shown below as well.
 
 {% raw %}
 ```liquid
@@ -212,8 +212,6 @@ data:
 </head>
 ```
 {% endraw %}
-
-The Liquid usage is slightly different as the shortcode expects a single parameter representing an object containing metadata. You can define the object in frontmatter like shown above or within global data files.
 
 ## Shortcode Parameters
 A list containing all of the parameters this plugin accepts. If you can't find a parameter that suits your all of your needs, feel free to [open an issue](https://github.com/tannerdolby/eleventy-plugin-metagen/issues) so we can get the parameter and/or corresponding meta tag added to the plugin.
