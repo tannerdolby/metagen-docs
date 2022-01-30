@@ -213,7 +213,7 @@ data:
 ```
 {% endraw %}
 
-The Liquid usage is a bit different as the shortcode expects a single parameter representing an object with key/value pairs. You can define the object in frontmatter like shown above or within global data files.
+The Liquid usage is slightly different as the shortcode expects a single parameter representing an object containing metadata. You can define the object in frontmatter like shown above or within global data files.
 
 ## Shortcode Parameters
 A list containing all of the parameters this plugin accepts. If you can't find a parameter that suits your all of your needs, feel free to [open an issue](https://github.com/tannerdolby/eleventy-plugin-metagen/issues) so we can get the parameter and/or corresponding meta tag added to the plugin.
