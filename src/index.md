@@ -59,6 +59,7 @@ The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like t
     img_alt="Archimedean Spiral",
     twitter_card_type="summary_large_image",
     twitter_handle="tannerdolby",
+    dns_prefetch="https://example.com",
     name="Tanner Dolby",
     comments=true
 %}
@@ -71,6 +72,7 @@ into `<meta>` tags and other document metadata like this:
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="dns-prefetch" href="https://example.com">
 <title>Eleventy Plugin Meta Generator</title>
 <meta name="author" content="Tanner Dolby">
 <meta name="description" content="An eleventy shortcode for generating meta tags.">
@@ -298,3 +300,9 @@ default: `title`
 ### twitter_desc
 The content for `twitter:description`.  
 default: `desc`
+
+### preconnect
+The `href` value for `<link rel="preconnect">`. Accepts a string or an array of strings.
+
+### dns_prefetch
+The `href` value for `<link rel="dns-prefetch">`. Accepts a string or an array of strings.
