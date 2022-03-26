@@ -306,3 +306,9 @@ The `href` value for `<link rel="preconnect">`. Accepts a string or an array of 
 
 ### dns_prefetch
 The `href` value for `<link rel="dns-prefetch">`. Accepts a string or an array of strings.
+
+### robots
+The `content` value for `<meta name="robots">`. Accepts a string.
+
+### crawlers
+The `name` and `content` values for `<meta name="" content="">` custom crawler tags. Accepts an object containing key value pairs where the key is the crawler name and value is the content. i.e. `crawlers={"googlebot": "noindex"}`
