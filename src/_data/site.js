@@ -3,6 +3,6 @@ module.exports = () => {
         first_name: "Tanner",
         last_name: "Dolby",
         site_name: "Metagen Docs",
-        version: "1.6.1"
+        version: "1.7.7"
     }
 }
