@@ -131,6 +131,15 @@ body h6 {
     color: #222;
 }
 
+h4 {
+    font-size: 18px;
+}
+
+.tag-section {
+    font-size: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
 a {
     color: var(--link-blue-a11y);
     text-decoration: none;
