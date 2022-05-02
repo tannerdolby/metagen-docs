@@ -22,6 +22,10 @@ eleventy-plugin-metagen is a `<meta>` tag generator for sites built with [Eleven
         <li><a href="#use_your_template_data">Use Your Template Data</a></li>
         <li><a href="#liquid_usage">Liquid usage</a></li>
         <li><a href="#shortcode_parameters">Shortcode Parameters</a></li>
+        <li><a href="#general">General</a></li>
+        <li><a href="#open_graph">Open Graph</a></li>
+        <li><a href="#twitter_card">Twitter Card</a></li>
+        <li><a href="#custom_tags">Custom Tags</a></li>
       </ul>
   </details>
 </nav>
@@ -52,16 +56,21 @@ The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like t
 
 ```liquid
 {% metagen
-    title="Eleventy Plugin Meta Generator",
-    desc="An eleventy shortcode for generating meta tags.",
-    url="https://tannerdolby.com",
-    img="https://tannerdolby.com/images/arch-spiral-large.jpg",
-    img_alt="Archimedean Spiral",
-    twitter_card_type="summary_large_image",
-    twitter_handle="tannerdolby",
-    dns_prefetch="https://example.com",
-    name="Tanner Dolby",
-    comments=true
+  title="Eleventy Plugin Meta Generator",
+  desc="An eleventy shortcode for generating meta tags.",
+  url="https://tannerdolby.com",
+  img="https://tannerdolby.com/images/arch-spiral-large.jpg",
+  img_alt="Archimedean Spiral",
+  twitter_card_type="summary_large_image",
+  twitter_handle="tannerdolby",
+  name="Tanner Dolby",
+  generator="eleventy",
+  comments=true,
+  css=["style.css", "design.css"],
+  js=["foo.js", ["bar.js", "async"]],
+  inline_css="h1 { color: #f06; }",
+  inline_js="console.log('hello, world.');",
+  custom=[["meta", "", {name: "custom", content: "foo" }]]
 %}
 ```
 {% endraw %}
@@ -72,17 +81,17 @@ into `<meta>` tags and other document metadata like this:
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="dns-prefetch" href="https://example.com">
 <title>Eleventy Plugin Meta Generator</title>
 <meta name="author" content="Tanner Dolby">
+<meta name="title" content="Eleventy Plugin Meta Generator">
 <meta name="description" content="An eleventy shortcode for generating meta tags.">
 <meta name="generator" content="eleventy">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://tannerdolby.com">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Eleventy Plugin Meta Generator">
 <meta property="og:description" content="An eleventy shortcode for generating meta tags.">
-<meta property="og:url" content="https://tannerdolby.com">
 <meta property="og:image" content="https://tannerdolby.com/images/arch-spiral-large.jpg">
 <meta property="og:image:alt" content="Archimedean Spiral">
 <!-- Twitter -->
@@ -95,6 +104,13 @@ into `<meta>` tags and other document metadata like this:
 <meta name="twitter:image" content="https://tannerdolby.com/images/arch-spiral-large.jpg">
 <meta name="twitter:image:alt" content="Archimedean Spiral">
 <link rel="canonical" href="https://tannerdolby.com">
+<meta name="custom" content="foo">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="design.css">
+<style>h1 { color: #f06; }</style>
+<script src="foo.js"></script>
+<script src="bar.js" async></script>
+<script>console.log('hello, world');</script>
 ```
 {% endraw %}
 
@@ -208,6 +224,8 @@ data:
     twitter_card_type: summary_large_image
     twitter_handle: tannerdolby
     name: Tanner Dolby
+    custom:
+    - ["meta", "", { foo: "bar"}]
 ---
 <head>
   {% metagen data %}
@@ -218,97 +236,154 @@ data:
 ## Shortcode Parameters
 A list containing all of the parameters this plugin accepts. If you can't find a parameter that suits your all of your needs, feel free to [open an issue](https://github.com/tannerdolby/eleventy-plugin-metagen/issues) so we can get the parameter and/or corresponding meta tag added to the plugin.
 
-### title
+<h3 class="tag-section" id="general">General</h3>
+
+#### css
+An array of CSS files to be generated as `<link rel="stylesheet" href="file[i]">`. E.g. `css=["style.css", "foo.css"]`
+
+#### inline_css
+A string representing the inline content. E.g. `inline_css="h1 { color: #f06; }"`
+
+#### js
+An array of JavaScript files to be generated as `<script src="file[i]">` or `<script src="file[i]" async>`. E.g. `js=["script.js", ["bar.js", "async"]]`
+
+#### inline_js
+A string representing the inline content. E.g. `inline_js="console.log('hello world');"`
+
+#### title
 The content for `<title>`, `<meta name="title">`, `og:title` and `twitter:title`. If `og_title` and `twitter_title` are defined they will override the fields.
 
-### name
-The content for `<meta name="author">`.
+#### url
+The content for `<link rel="canonical">`, `og:url` and `twitter:url`
 
-### desc
+#### name
+The content for `<meta name="author">`
+
+#### desc
 The content for `<meta name="description">`, `og:description`, and  `twitter:description` if `og_desc` or `twitter_desc` isn't defined.
 
-### generator
+#### locale
+The locale tags are marked up in.  
+default: `en_US` 
+
+#### generator
 The content for `<meta name="generator">`. The value must be a free-form string that identifies one of the software packages used to generate the document. This value must not be used on pages whose markup is not generated by software, e.g. pages whose markup was written by a user in a text editor.
 
-### comments
+#### comments
 Display default comments for the Open Graph and Twitter tags.  
 default: `false`
 
-### og_comment
-Display a custom comment for the Open Graph set of tags.  
-requires: `comments: true`
+#### preconnect
+The `href` value for `<link rel="preconnect">`. Accepts a string or an array of strings.
 
-### type
-The content for `og:type`.  
+#### dns_prefetch
+The `href` value for `<link rel="dns-prefetch">`. Accepts a string or an array of strings.
+
+#### robots
+The `content` value for `<meta name="robots">`. Accepts a string.
+
+#### crawlers
+The `name` and `content` values for `<meta name="" content="">` custom crawler tags. Accepts an object containing key value pairs where the key is the crawler name and value is the content. i.e. `crawlers={"googlebot": "noindex"}`
+
+<h3 class="tag-section" id="open_graph">Open Graph</h3>
+
+#### og_title
+The content for `og:title` 
+default: `title`
+
+#### og_desc
+The content for `og:description` 
+default: `desc`
+
+#### img
+The content for `og:image`
+
+#### type
+The content for `og:type`
 options: `article`, `product`  
 default: `website`
 
-### url
-The content for `<link rel="canonical">`, `og:url` and `twitter:url`.
+#### site_name
+The content for `og:site_name`
 
-### site_name
-The content for `og:site_name`.
+#### img_width
+The content for `og:image:width`
 
-### locale
-The locale these tags are marked up in.  
-default: `en_US` 
+#### img_height
+The content for `og:image:height`
 
-### og_title
-The content for `og:title`.  
+#### img_alt
+The content for `og:image:alt` and `twitter:image:alt`. If an `og:image` is defined, it is recommended to define this field to generate the `og:image:alt` tag.
+
+#### og_comment
+Display a custom comment for the Open Graph set of tags.  
+requires: `comments: true`
+
+#### og_img_type
+A [MIME type](https://en.wikipedia.org/wiki/Internet_media_type) for the image. E.g. `image/jpeg`
+
+#### og_secure_img_url
+An alternate url to use for the image if the webpage requires HTTPS.
+
+#### og_audio
+The content for `og:audio`
+
+#### og_video
+The content for `og:video`
+
+#### og_determiner
+The content for `og:determiner`
+
+#### og_alternate_locales
+An array of alternate locale strings. E.g. `og_alternate_locales=["es", "zh", "ja"]`
+
+<h3 class="tag-section" id="twitter_card">Twitter Card</h3>
+
+#### twitter_card_type
+The content for `twitter:card`
+options: `summary_large_image`  
+default: `summary`
+
+#### twitter_handle
+The content for `twitter:site` or `twitter:creator` if `twitter_card_type: summary_large_image`.
+
+#### creator_handle
+The content for `twitter:creator`. This tag is used if `twitter_card_type: summary_large_image`.
+
+#### twitter_title
+The content for `twitter:title` 
 default: `title`
 
-### og_desc
-The content for `og:description`.  
+#### img
+The content for `twitter:image`
+
+#### img_alt
+The content for `twitter:image:alt`
+
+#### twitter_desc
+The content for `twitter:description`
 default: `desc`
 
-### img
-The content for `og:image` and `twitter:image`.
-
-### img_alt
-The content for `og:image:alt` and `twitter:image:alt`.
-
-### img_width
-The content for `og:image:width`.
-
-### img_height
-The content for `og:image:height`.
-
-### twitter_comment
+#### twitter_comment
 Display a custom comment for the Twitter set of tags.  
 requires: `comments: true`
 
-### attr_name
+#### attr_name
 Define attribute name for the Twitter set of meta tags.  
 options: `property`  
 default: `name`
 
-### twitter_card_type
-The content for `twitter:card`.  
-options: `summary_large_image`  
-default: `summary`
+<h3 class="tag-section" id="custom_tags">Custom Tags</h3>
 
-### twitter_handle
-The content for `twitter:site` or `twitter:creator` if `twitter_card_type: summary_large_image`.
+#### custom
+An option for generating custom tags. Accepts an array of "element" arrays. Array[3] or Array[4]. E.g. `custom=[["meta", "", {name: "myCustomTag", content: "foo" }]]`
 
-### creator_handle
-The content for `twitter:creator`. This tag is used if `twitter_card_type: summary_large_image`.
+```js
+Array[0]: String Tag name.
+Array[1]: String Text content.
+Array[2]: Object representing attribute key/value pairs.
+Array[3]: Boolean representing self closing tags. (default = false)
+```
 
-### twitter_title
-The content for `twitter:title`.  
-default: `title`
-
-### twitter_desc
-The content for `twitter:description`.  
-default: `desc`
-
-### preconnect
-The `href` value for `<link rel="preconnect">`. Accepts a string or an array of strings.
-
-### dns_prefetch
-The `href` value for `<link rel="dns-prefetch">`. Accepts a string or an array of strings.
-
-### robots
-The `content` value for `<meta name="robots">`. Accepts a string.
-
-### crawlers
-The `name` and `content` values for `<meta name="" content="">` custom crawler tags. Accepts an object containing key value pairs where the key is the crawler name and value is the content. i.e. `crawlers={"googlebot": "noindex"}`
+#### minified
+A boolean value which determines if the metagen output is minified.
