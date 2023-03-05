@@ -6,20 +6,8 @@ sidebar_position: 1
 
 A list containing all of the basic parameters this plugin accepts. If you can't find a parameter that suits your all of your needs, feel free to [open an issue](https://github.com/tannerdolby/eleventy-plugin-metagen/issues) so we can get the parameter and/or corresponding meta tag added to the plugin.
 
-## Basic Params
-The follow parameters are for general document metadata.
-
-### css
-An array of CSS files to be generated as `<link rel="stylesheet" href="file[i]">`. E.g. `css=["style.css", "foo.css"]`
-
-### inline_css
-A string representing the inline content. E.g. `inline_css="h1 { color: #f06; }"`
-
-### js
-An array of JavaScript files to be generated as `<script src="file[i]">` or `<script src="file[i]" async>`. E.g. `js=["script.js", ["bar.js", "async"]]`
-
-### inline_js
-A string representing the inline content. E.g. `inline_js="console.log('hello world');"`
+## Parameters
+The following options are for supported by this plugin for foundational document metadata.
 
 ### title
 The content for `<title>`, `<meta name="title">`, `og:title` and `twitter:title`. If `og_title` and `twitter_title` are defined they will override the fields.
@@ -55,3 +43,15 @@ The `content` value for `<meta name="robots">`. Accepts a string.
 
 ### crawlers
 The `name` and `content` values for `<meta name="" content="">` custom crawler tags. Accepts an object containing key value pairs where the key is the crawler name and value is the content. i.e. `crawlers={"googlebot": "noindex"}`
+
+### css
+An array of CSS files to be generated as `<link rel="stylesheet" href="file[i]">`. E.g. `css=["style.css", "foo.css"]`
+
+### inline_css
+A string representing the inline content. E.g. `inline_css="h1 { color: #f06; }"`
+
+### js
+An array of JavaScript files to be generated as `<script src="foo.js">` or `<script src="bar.js" async>`. E.g. `js=["foo.js", ["bar.js", "async"]]`
+
+### inline_js
+A string representing the inline content. E.g. `inline_js="console.log('hello world');"`

@@ -5,8 +5,8 @@ sidebar_position: 4
 # Custom Tags
 The following represents custom metagen options.
 
-## Options
-The following are the custom parameters this plugin supports.
+## Parameters
+The following options are supported by this plugin.
 
 ### custom
 An option for generating custom tags. Accepts an array of "element" arrays. E.g. `custom=[["meta", "", {name: "myCustomTag", content: "foo" }]]`

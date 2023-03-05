@@ -8,7 +8,7 @@ Let's discover **eleventy-plugin-metagen in less than 5 minutes**.
 
 ## Getting Started
 
-Get started by **downloading [eleventy-plugin-metagen](https://www.npmjs.com/package/eleventy-plugin-metagen)**.
+Get started by downloading [eleventy-plugin-metagen](https://www.npmjs.com/package/eleventy-plugin-metagen).
 
 ### What you'll need
 

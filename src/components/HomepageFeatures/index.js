@@ -8,7 +8,7 @@ const FeatureList = [
     description: (
       <>
         eleventy-plugin-metagen was created for quickly adding document metadata
-        to pages for your 11ty site.
+        to pages in your 11ty site.
       </>
     ),
   },
@@ -24,7 +24,7 @@ const FeatureList = [
     title: 'Powered by an Eleventy Plugin',
     description: (
       <>
-        Quickly define documenta metadata for pages using the familiar 11ty plugin syntax.
+        Quickly define document metadata for pages using the familiar 11ty shortcode syntax.
       </>
     ),
   },

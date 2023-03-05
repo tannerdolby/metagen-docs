@@ -3,10 +3,10 @@ sidebar_position: 2
 ---
 
 # Open Graph
-The parameters that will make up an Open Graph card.
+The parameters that will be used for Open Graph.
 
-## Options
-The following are the main Open Graph parameters this plugin supports.
+## Parameters
+The following options are supported by this plugin for Open Graph social share.
 
 ### og_title
 The content for `og:title` 

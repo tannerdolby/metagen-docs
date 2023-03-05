@@ -3,10 +3,10 @@ sidebar_position: 3
 ---
 
 # Twitter
-The parameters that will makeup a Twitter card.
+The parameters that will be used for Twitter.
 
-## Options
-The following are the main Twitter parameters this plugin supports.
+## Parameters
+The following options are supported by this plugin for Twitter social share.
 
 ### twitter_card_type
 The content for `twitter:card`
