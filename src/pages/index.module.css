@@ -8,6 +8,31 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: #eee;
+  color: #111;
+}
+
+.heroBanner a {
+  background: #111 !important;
+  color: #eee !important;
+}
+
+.heroBanner a:hover {
+  background: #212121 !important;
+}
+
+[data-theme='dark'] .heroBanner {
+  color: rgb(230, 228, 228) !important;
+  background: #121211;
+}
+
+[data-theme='dark'] .heroBanner a {
+  background: rgb(212, 213, 216) !important;
+  color: #111 !important;
+}
+
+[data-theme='dark'] .heroBanner a:hover {
+  background: rgb(191, 191, 194) !important;
 }
 
 @media screen and (max-width: 996px) {
