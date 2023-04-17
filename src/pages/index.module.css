@@ -13,12 +13,12 @@
 }
 
 .heroBanner a {
-  background: #111 !important;
-  color: #eee !important;
+  background: #1a6bdd !important;
+  color: #fff !important;
 }
 
 .heroBanner a:hover {
-  background: #212121 !important;
+  background: #1764d1 !important;
 }
 
 [data-theme='dark'] .heroBanner {
