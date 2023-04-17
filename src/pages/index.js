@@ -26,18 +26,6 @@ function HomepageHeader() {
   );
 }
 
-function HomepageInfo() {
-  return (
-    <div className="banner-center">
-        <p>
-          eleventy-plugin-metagen is a meta tag generator for sites 
-          built with <a href="https://11ty.dev">Eleventy</a>. Generate meta tags for <a href="https://ogp.me/">Open Graph</a> and <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup">Twitter</a> along with some other useful tags. All of the tags necessary for a baseline social share functionality 
-          are included with this plugin along with additional tags for more custom use cases.
-        </p>
-    </div>
-  )
-}
-
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -46,7 +34,6 @@ export default function Home() {
       description="Documentation site for eleventy-plugin-metagen">
       <HomepageHeader />
       <main>
-        <HomepageInfo className="banner-center" />
         <HomepageFeatures />
       </main>
     </Layout>

@@ -6,6 +6,8 @@ sidebar_position: 1
 
 Let's discover **eleventy-plugin-metagen in less than 5 minutes**.
 
+eleventy-plugin-metagen is a meta tag generator for sites built with [Eleventy](https://11ty.dev). Generate meta tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with some other useful tags. All of the tags necessary for a baseline social share functionality are included with this plugin along with additional tags for more custom use cases.
+
 ## Getting Started
 
 Get started by downloading [eleventy-plugin-metagen](https://www.npmjs.com/package/eleventy-plugin-metagen).
