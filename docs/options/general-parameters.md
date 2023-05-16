@@ -160,9 +160,12 @@ js=['foo.js', 'bar.js:async:type="module"', 'fizz.js:defer']
 ```
 
 ### inline_js
-An array of strings or objects to be generated as `<script>` elements `inline_js="console.log('hello world');"`
+A string or array of strings or objects to be generated as `<script>` elements `inline_js="console.log('hello world');"`
 
 ```njk
+inline_js='console.log(123);'
+=> <script>console.log(123);</script>
+
 inline_js=[
   'console.log("hello, world");',
   {type: 'application/json', id: 'some-id', js: '{"data": "hello"}'}
@@ -171,7 +174,8 @@ inline_js=[
 <script>console.log("hello, world");</script>
 <script type="application/json" id="some-id">{"data": "hello"}</script>
 ```
-Using template variables.
+
+Using front matter.
 
 ```njk
 ---
