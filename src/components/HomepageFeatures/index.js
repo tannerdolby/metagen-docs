@@ -16,7 +16,7 @@ const FeatureList = [
     title: 'Focus on What Matters',
     description: (
       <>
-        Metagen lets you focus on your 11ty site, without having to worry about missing document metadata.
+        Metagen lets you focus on your site, without having to worry about missing document metadata.
       </>
     ),
   },

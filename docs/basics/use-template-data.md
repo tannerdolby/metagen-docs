@@ -31,4 +31,4 @@ name: Tanner Dolby
 %}
 ```
 
-As a general rule, don't forget your in a templating engine context. Use your variables in the shortcode as you would inside `{% var %}` tags or `{{ var }}` without the curly braces like `title=var`.
+As a general rule, don't forget you're in a templating engine context. Use template variables in the shortcode without the quotes or curly braces like `title=var`.

@@ -8,6 +8,10 @@ The parameters that will be used for Open Graph.
 ## Parameters
 The following options are supported by this plugin for Open Graph social share.
 
+### locale
+A string representing the locale tags are marked up in. 
+default: `en_US`
+
 ### og_title
 The content for `og:title` 
 default: `title`
