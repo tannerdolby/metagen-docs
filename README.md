@@ -5,6 +5,6 @@
 The documentation site for:
 
 - [`meta-generator`](https://www.npmjs.com/package/meta-generator)
-- [`eleventy-plugin-metagen`](https://www.npmjs.com/package/eleventy-plugin-metagen). 
+- [`eleventy-plugin-metagen`](https://www.npmjs.com/package/eleventy-plugin-metagen)
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
