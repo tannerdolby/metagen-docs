@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Providing all of the supported arguments to `metagen` shown in the [intro](/docs/intro#what-does-it-do) is recommended for baseline social share. If you want to add more meta tags that are not listed in the basic introduction example, see [plugin options](/docs/category/options) for supported tags or create your own custom tags. You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't be generated.
 
-Besides the default generated tags, only the arguments you provide data for will be generated. This allows you to include some of your own tags alongside metagen if you need. Template variables can be used in the Nunjucks and Liquid shortcode arguments without the curly braces or quotes like `title=page.url`. Take a look at [use your template data](/docs/basics/use-template-data) for more on template variable usage.
+Besides the default generated tags, only the arguments you provide data for will be generated. This allows you to include some of your own tags alongside metagen if you need. Template variables can be used in the Nunjucks and Liquid shortcode arguments without the curly braces or quotes like `title=page.url`. Take a look at [use your template data](/docs/eleventy/use-template-data) for more on template variable usage.
 
 ## Shortcode Default Tags
 
@@ -31,13 +31,11 @@ the default `<meta>` tags aside from the main Open Graph and Twitter card data a
 <meta name="twitter:card" content="summary">
 ```
 
-The `title` parameter provides data for `<title>`. If title is not defined. it will not be generated with the above default tags. The same rules apply for `name` and `desc`. All other arguments if omitted, will not have tags generated.
-
-Using `{% metagen %}` without any arguments will throw an error and returns an empty string.
+Using `{% metagen %}` without any arguments will log an error to the console and return an empty string.
 
 ## Nunjucks Usage
 
-To use the shortcode as a one-liner. You can define an object in frontmatter, global data or another data source with the required key/value pairs and supply the shortcode with a single object parameter. 
+To use the shortcode with short-hand syntax. You can define an object in frontmatter, global data or another data source with the required key/value pairs and supply the shortcode with a single object parameter. 
 
 ```njk
 ---
@@ -187,11 +185,11 @@ generates the following metadata:
 <link rel="stylesheet" href="print.css" media="print">
 <link rel="preload" href="myFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
-<link href="foo.css" rel="preload" as="style">
+<link rel="preload" as="style" href="foo.css">
 <style>h1 {color: #f06}</style>
 <script src="foo.js"></script>
 <script src="bar.js" async type="module"></script>
 <script src="fizz.js" defer></script>
-<script>console.log('hello, world');</script>
+<script>console.log("hello, world")</script>
 <script type="application/json" id="some-id">{"data": "hello"}</script>
 ```

@@ -7,8 +7,7 @@ const FeatureList = [
     title: 'Easy to Use',
     description: (
       <>
-        eleventy-plugin-metagen was created for quickly adding document metadata
-        to pages in your 11ty site.
+        quickly generate static and dynamically computed document metadata
       </>
     ),
   },
@@ -16,15 +15,15 @@ const FeatureList = [
     title: 'Focus on What Matters',
     description: (
       <>
-        Metagen lets you focus on your site, without having to worry about missing document metadata.
+        focus on your site, without having to worry about manually handling document metadata
       </>
     ),
   },
   {
-    title: 'Powered by an Eleventy Plugin',
+    title: 'Powered by a JavaScript Utility',
     description: (
       <>
-        Quickly define document metadata for pages using the familiar 11ty shortcode syntax.
+        populate document metadata for pages using familiar JavaScript syntax
       </>
     ),
   },

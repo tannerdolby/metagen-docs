@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Documentation site for eleventy-plugin-metagen">
+      description="Documentation site for metagen">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

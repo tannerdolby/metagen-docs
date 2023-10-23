@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Metagen Docs',
-  tagline: 'Quickly generate document metadata for your 11ty site',
+  title: 'meta-generator',
+  tagline: 'Quickly generate document metadata for your website',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'tannerdolby', // Usually your GitHub org/user name.
-  projectName: 'metagen-docs', // Usually your repo name.
+  projectName: 'meta-generator-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -85,10 +85,6 @@ const config = {
                 to: '/docs/intro',
               },
               {
-                label: 'Usage',
-                to: '/docs/category/usage'
-              },
-              {
                 label: 'Options',
                 to: '/docs/category/options'
               }
@@ -99,7 +95,7 @@ const config = {
             items: [
               {
                 label: 'Feature Requests',
-                href: 'https://github.com/tannerdolby/eleventy-plugin-metagen/issues',
+                href: 'https://github.com/tannerdolby/metagen-docs',
               },
               {
                 label: 'Twitter',
@@ -121,7 +117,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Metagen Docs - Built with Docusaurus.`,
+        copyright: `copyright © ${new Date().getFullYear()} meta-generator docs - built with docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

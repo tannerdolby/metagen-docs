@@ -1,8 +1,8 @@
 {
   "label": "Options",
-  "position": 3,
+  "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "The eleventy-plugin-metagen options."
+    "description": "Supported arguments for the meta-generator utility."
   }
 }

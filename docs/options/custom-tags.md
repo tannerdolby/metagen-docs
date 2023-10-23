@@ -3,13 +3,21 @@ sidebar_position: 4
 ---
 
 # Custom
-The following represents custom metagen options.
+The following represents custom metagen arguments.
 
-## Parameters
-The following options are supported by this plugin.
+## Arguments
+The following arguments are supported by this plugin.
 
 ### custom
-An option for generating custom tags. Accepts an array of objects. E.g. `custom=[["meta", "", {name: "myCustomTag", content: "foo" }]]`
+Generate custom tags. Accepts an array of tag objects:
+```
+{
+  tag: String,
+  text: String
+  attrs: Object
+  selfClosing: Boolean
+}
+```
 
 ```njk
 ---
@@ -29,4 +37,4 @@ custom: [
 ```
 
 ### minified
-A boolean value which determines if the metagen output is minified. E.g. `minified=true`
+A boolean value which determines if metagen output is minified.
