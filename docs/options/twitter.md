@@ -31,8 +31,8 @@ The content for `twitter:image:alt`
 ### twitter_desc
 The content for `twitter:description`
 
-### twitter_comment
-Display a custom HTML comment for the set of Twitter tags. Requires `comments=true`
-
 ### twitter_attr_name
 Define attribute name for the Twitter set of meta tags. For example, use twitter_attr_name="property" to produce `<meta property="foo" content="hi>`
+
+### twitter_comment
+Display a custom HTML comment for the set of Twitter tags. Requires `comments=true`
