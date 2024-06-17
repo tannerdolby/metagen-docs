@@ -35,11 +35,21 @@ Using `{% metagen %}` without any arguments will log an error to the console and
 
 ## Nunjucks Usage
 
-To use the shortcode with short-hand syntax. You can define an object in frontmatter, global data or another data source with the required key/value pairs and supply the shortcode with a single object parameter. 
+Commas are required between arguments in Nunjucks shortcodes.
+
+```njk
+{% metagen
+  title="Some title",
+  desc="Some desc",
+  comments=true,
+%}
+```
+
+To use the shortcode with short-hand syntax. You can define an object in frontmatter, global data or another data source with the required key/value pairs and supply the shortcode with a single object parameter.
 
 ```njk
 ---
-data:
+metadata:
   title: Eleventy Plugin Add Meta Tags
   desc: An eleventy shortcode for generating meta tags.
   url: https://tannerdolby.com
@@ -51,7 +61,7 @@ data:
   custom:
     - {tag: "meta", attrs: { name: "fizz", content: "buzz"}}
 ---
-{% metagen data %}
+{% metagen metadata %}
 ```
 
 generates the following metadata:
@@ -84,13 +94,17 @@ generates the following metadata:
 
 ## Liquid Usage
 
-If you are using Liquid (which is the default templating engine in Eleventy). Then utilize the following syntax by passing the shortcode a metadata object containing the expected fields.
+If you are using Liquid (which is the default templating engine in Eleventy). Commas are optional between arguments in the shortcode.
 
-Note: You can pass an object from global data or front matter to `metagen` using Nunjucks like shown below.
+```liquid
+{% metagen title="Foo" desc="bar" %}
+```
+
+If you want to use the short-hand syntax, provide a metadata object containing the expected fields. You can pass an object from global data, frontmatter, or whichever data source in the cascade.
 
 ```liquid
 ---
-data: 
+metadata: 
   title: Eleventy Plugin Add Meta Tags
   desc: An eleventy shortcode for generating meta tags.
   url: https://tannerdolby.com
@@ -100,7 +114,7 @@ data:
   twitter_handle: tannerdolby
   name: Tanner Dolby
 ---
-{% metagen data %}
+{% metagen metadata %}
 ```
 
 ## Advanced Usage

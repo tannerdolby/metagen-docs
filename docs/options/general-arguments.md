@@ -46,7 +46,7 @@ Display default comments for the Open Graph and Twitter tags.
 default: `false`
 
 ### preconnect
-The `href` value for `<link rel="preconnect">`. Accepts a string | Array containing strings or objects.
+The `href` value for `<link rel="preconnect">`. Accepts a string | Array containing strings or objects with valid key/value pairs.
 
 ```njk
 preconnect='https://google.com'

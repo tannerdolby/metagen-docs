@@ -1,0 +1,50 @@
+--- 
+sidebar_position: 5
+--- 
+
+# Supported
+
+- title
+- url
+- name
+- desc
+- description
+- generator
+- locale
+- comments
+- preconnect
+- dns_prefetch
+- robots
+- crawlers
+- img
+- site_name
+- img_width
+- img_height
+- img_alt
+- og_title
+- og_desc
+- og_comment
+- og_img_type
+- og_secure_img_url
+- og_audio
+- og_video
+- og_determiner
+- og_alternate_locales
+- twitter_card_type
+- twitter_handle
+- creator_handle
+- twitter_title
+- twitter_image
+- twitter_image_alt
+- twitter_image_width
+- twitter_image_height
+- twitter_image_type
+- twitter_desc
+- twitter_comment
+- twitter_attr_name
+- css
+- inline_css
+- js
+- inline_js
+- custom
+- minified
