@@ -6,14 +6,14 @@ sidebar_position: 1
 
 Let's discover **eleventy-plugin-metagen in less than 5 minutes**.
 
-This plugin is powered by `meta-generator` and creates document metadata for sites built with [Eleventy](https://11ty.dev). Generate meta tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with other useful metadata. All of the tags necessary for baseline social share functionality are included with this plugin along with additional tags for more custom use cases.
+This plugin is powered by `meta-generator` and creates document metadata through a shortcode for sites built with [Eleventy](https://11ty.dev). Generate meta tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with other useful metadata. All of the tags necessary for baseline social share functionality are included with this plugin along with additional metadata support for more custom use cases.
 
-### What you'll need
+## What you'll need
 
 - An [Eleventy](https://www.11ty.dev/) project
 - [Node.js](https://nodejs.org/en/download/) version 14.x or above
 
-### Setup
+## Setup
 In your Eleventy project, [install the plugin](https://www.npmjs.com/package/eleventy-plugin-metagen) from npm:
 
 ```js
@@ -31,9 +31,9 @@ module.exports = (eleventyConfig) => {
 ```
 
 ## What does it do?
-The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like this:
+The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) used in a Nunjucks template like this:
 
-```
+```njk
 {% metagen
   title='Eleventy Plugin Meta Generator',
   desc='An eleventy shortcode for generating meta tags.',

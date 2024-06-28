@@ -3,9 +3,13 @@ sidebar_position: 2
 ---
 
 # Use Your Data
-To make your page metadata dynamic, you can use template data or any data source as arguments to the shortcode, without quotes or braces:
+To make your page metadata dynamic, you can use template data from front matter or any data source as arguments to the shortcode in Nunjucks templates without quotes or curly braces. In the example below, I define some frontmatter and then use my template variables in the shortcode arguments.
 
-```liquid
+> Note: This functionality only works in Nunjucks templates and will not work the same in Liquid templates. If you require this template data functionality, you will need to use the metagen shortcode strictly in Nunjucks templates. See [Liquid usage](/docs/eleventy/plugin-usage#liquid-usage) for what is possible in Liquid templates.
+
+## Nunjucks Templates
+
+```njk
 ---
 title: Some title
 desc: Some description
@@ -58,4 +62,4 @@ which generates the metadata:
 <link rel="canonical" href="https://tannerdolby.com">
 ```
 
-As a general rule, don't forget you're in a templating engine context when using the `metagen` shortcode. Use template variables as shortcode arguments without the quotes or curly braces like `title=var`.
+You can also define an object in front matter or some other data source then pass the metadata object to the shortcode like shown in [Nunjucks usage](/docs/eleventy/plugin-usage#nunjucks-usage)

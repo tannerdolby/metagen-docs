@@ -6,25 +6,25 @@ const FeatureList = [
   {
     title: 'Easy to Use',
     description: (
-      <>
-        quickly generate static and dynamically computed document metadata
-      </>
+      <p>
+        Quickly generate static and dynamically computed document metadata
+      </p>
     ),
   },
   {
     title: 'Focus on What Matters',
     description: (
-      <>
-        focus on your site, without having to worry about manually handling document metadata
-      </>
+      <p>
+        Focus on your site, without having to worry about manually typing out document metadata
+      </p>
     ),
   },
   {
     title: 'Powered by a JavaScript Utility',
     description: (
-      <>
-        populate document metadata for pages using familiar JavaScript syntax
-      </>
+      <p>
+        Populate document metadata for pages using familiar JavaScript syntax
+      </p>
     ),
   },
 ];

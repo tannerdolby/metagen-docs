@@ -2,11 +2,43 @@
 sidebar_position: 1
 ---
 
-# Plugin Details
+# Plugin Usage
 
-Providing all of the supported arguments to `metagen` shown in the [intro](/docs/intro#what-does-it-do) is recommended for baseline social share. If you want to add more meta tags that are not listed in the basic introduction example, see [plugin options](/docs/category/options) for supported tags or create your own custom tags. You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't be generated.
+Providing all of the supported arguments to `metagen` shown in the [intro](/docs/eleventy/intro) is recommended for baseline social share. If you want to add more metadata that isn't shown in the basic introduction example, see [plugin options](/docs/category/options) for supported tags or create your own [custom tags](/options/custom-tags). You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't be generated.
 
-Besides the default generated tags, only the arguments you provide data for will be generated. This allows you to include some of your own tags alongside metagen if you need. Template variables can be used in the Nunjucks and Liquid shortcode arguments without the curly braces or quotes like `title=page.url`. Take a look at [use your template data](/docs/eleventy/use-template-data) for more on template variable usage.
+Besides the default generated tags, only the arguments you provide data for will be generated. This allows you to include some of your own tags alongside `metagen` if you need.
+
+Template variables can be used in the shortocde with Nunjucks templates and the shortcode arguments should be provided without the curly braces or quotes like `title=page.url`. Take a look at [use your template data](/docs/eleventy/use-template-data) for more on template variable usage in Nunjucks templates.
+
+## Where does the shortcode work?
+You can use the 11ty shortcode in Nunjucks, Liquid, and Markdown files. The syntax for each looks like:
+
+### Nunjucks
+Works with single and multi-line syntax:
+
+```njk
+{% metagen title="Some title", desc="Some desc" %}
+
+{% metagen
+  title="Some title",
+  desc="Some desc",
+%}
+```
+### Liquid
+Only works with single line syntax:
+```liquid
+{% metagen "some title", "some description" %}
+```
+
+### Markdown
+From 11ty:
+
+> Markdown files are pre-processed as Liquid templates by default—any shortcodes available in Liquid templates are also available in Markdown files
+
+#### 11ty Docs
+- https://www.11ty.dev/docs/shortcodes/
+- https://www.11ty.dev/docs/languages/nunjucks/
+- https://www.11ty.dev/docs/languages/liquid/
 
 ## Shortcode Default Tags
 
@@ -35,7 +67,7 @@ Using `{% metagen %}` without any arguments will log an error to the console and
 
 ## Nunjucks Usage
 
-Commas are required between arguments in Nunjucks shortcodes.
+Commas are required between arguments in Nunjucks shortcodes and follow a name=value pair syntax.
 
 ```njk
 {% metagen
@@ -94,13 +126,9 @@ generates the following metadata:
 
 ## Liquid Usage
 
-If you are using Liquid (which is the default templating engine in Eleventy). Commas are optional between arguments in the shortcode.
+If you are using Liquid (which is the default templating engine in Eleventy). Commas are optional between arguments in the shortcode and do not follow the name=value syntax. Due to this and the variability of arguments supported by the shortcode, if you are using Liquid templates you should define your metadata object in front matter or another data source and pass a single object to the shortcode. For more dynamic usage, you might want to use Nunjucks templates.
 
-```liquid
-{% metagen title="Foo" desc="bar" %}
-```
-
-If you want to use the short-hand syntax, provide a metadata object containing the expected fields. You can pass an object from global data, frontmatter, or whichever data source in the cascade.
+Using the short-hand syntax, provide a metadata object containing the expected fields. You can pass an object from global data, frontmatter, or whichever data source in the cascade.
 
 ```liquid
 ---

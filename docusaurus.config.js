@@ -95,7 +95,7 @@ const config = {
             items: [
               {
                 label: 'Feature Requests',
-                href: 'https://github.com/tannerdolby/metagen-docs',
+                href: 'https://github.com/tannerdolby/meta-generator',
               },
               {
                 label: 'Twitter',

@@ -6,13 +6,9 @@ sidebar_position: 1
 
 Let's discover **meta-generator in less than 5 minutes**.
 
-This utility generates document metadata for websites. Create meta tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with other useful metadata. All of the tags necessary for baseline social share functionality are included with this plugin, with additional tags for more custom use cases.
+This utility generates document metadata for websites. Create `<meta>` tags for [Open Graph](https://ogp.me/) and [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) along with other useful metadata for social share. All of the tags necessary for baseline social share functionality are included with this plugin, with additional tags for more custom use cases.
 
 ## Getting Started
-
-Get started by installing [meta-generator](https://www.npmjs.com/package/meta-generator).
-
-### What you'll need
 
 - Environment with JavaScript
 
@@ -28,7 +24,7 @@ Then use the utility wherever JavaScript is supported to generate document metad
 ```js
 const metagen = require('meta-generator');
 
-console.log(metagen({
+const metadata = metagen({
   title: 'Meta Generator',
   desc: 'Utility for generating document metadata.',
   url: 'https://tannerdolby.com',
@@ -43,12 +39,12 @@ console.log(metagen({
   js: ['foo.js', 'bar.js:async'],
   inline_css: 'h1 { color: #f06; }',
   inline_js: 'console.log("hello, world.");'
-}));
+});
 ```
 
-which returns array of `<meta>` tags and other document metadata or a minified string:
+which returns array of `<meta>` tags and other document metadata to be used in the `<head>` of a webpage:
 
-```
+```html
 [
   '<meta charset="utf-8">',
   '<meta http-equiv="X-UA-Compatible" content="IE=edge">',
