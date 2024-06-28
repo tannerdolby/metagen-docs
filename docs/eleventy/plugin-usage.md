@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Plugin Usage
 
-Providing all of the supported arguments to `metagen` shown in the [intro](/docs/eleventy/intro) is recommended for baseline social share. If you want to add more metadata that isn't shown in the basic introduction example, see [plugin options](/docs/category/options) for supported tags or create your own [custom tags](/options/custom-tags). You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't be generated.
+Providing all of the supported arguments to `metagen` shown in the [intro](/docs/eleventy/intro) is recommended for baseline social share. If you want to add more metadata that isn't shown in the basic introduction example, see [plugin options](/docs/category/options) for supported tags or create your own [custom tags](/docs/options/custom-tags). You might only need a few `<meta>` tags instead of the whole set, simply provide the arguments you need and the ones not included won't be generated.
 
 Besides the default generated tags, only the arguments you provide data for will be generated. This allows you to include some of your own tags alongside `metagen` if you need.
 
